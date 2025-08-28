@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puskesmas Muara Satu</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    #btnTop {
+      display: none; position: fixed; bottom: 20px; right: 20px; z-index: 100;
+      width: 40px; height: 40px; border-radius: 50%; background-color: #137a56;
+      color: white; border: none; cursor: pointer; display: grid; place-items: center;
+      font-size: 1.2rem; transition: opacity 0.3s, transform 0.3s;
+    }
+    #btnTop:hover { opacity: 0.8; transform: scale(1.1); }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="gambar/logo.png" alt="Logo Puskesmas" width="35" class="me-2">
+        <span>Puskesmas Muara Satu</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbars">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#poli">Poli & Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#jadwal">Jadwal Dokter</a></li>
+          <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7 text-lg-start text-center">
+          <span class="badge badge-green rounded-pill px-3 py-2 mb-3">Puskesmas Muara Satu</span>
+          <h1 class="display-5 mb-3">Pusat Kesehatan Masyarakat <span class="text-warning" style="color:#b8ffd9 !important;">Kecamatan Muara Satu</span></h1>
+          <p class="lead mb-4">Fasilitas Kesehatan Tingkat Pertama (FKTP) yang bertanggung jawab atas kesehatan masyarakat di wilayah kerjanya pada satu atau bagian wilayah kecamatan.</p>
+          <div class="d-flex gap-2 justify-content-lg-start justify-content-center">
+            <a href="#poli" class="btn btn-ghost btn-lg"><i class="bi bi-hospital"></i> Lihat Poli</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="stat text-center">
+                <div class="h5 mb-2" id="clock">--:--:--</div>
+                <div class="h5 mb-2" id="tanggal">Memuat tanggal...</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat text-center">
+                <div class="h3 mb-0" id="stat-layanan">0</div>
+                <small>Jenis layanan</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat text-center">
+                <div class="h3 mb-0" id="stat-dokter">0</div>
+                <small>Jenis Tenaga Medis</small>
+              </div>
+            </div>
+          </div>
+          <div class="running-text mt-3">
+            <p id="running-msg"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profil" class="reveal">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="section-title mb-3">Profil Puskesmas</h2>
+          <p> Salah satu puskesmas di Kota Lhokseumawe melayani pemeriksaan kesehatan, rujukan, surat kesehatan dll. Puskesmas ini melayani berbagai program puskesmas seperti periksa kesehatan (check up), pembuatan surat keterangan sehat, rawat jalan, lepas jahitan, ganti balutan, jahit luka, cabut gigi, periksan tensi, tes hamil, periksa anak, tes golongan darah, asam urat, kolesterol dan lainnya.Puskesmas juga melayani pembuatan rujukan bagi pasien BPJS ke rumah sakit untuk mendapatkan perawatan lanjutan. Pelayanan Puskesmas Muara Satu juga baik dengan tenaga kesehatan yang baik, mulai dari perawat, dokter, alat kesehatan dan obatnya. Puskesmas ini dapat menjadi salah satu pilihan warga masyarakat Kota Lhokseumawe untuk memenuhi kebutuhan terkait kesehatan.</p>
+          <p>Senin s/d Minggu Buka 24 jam </p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check2-circle text-success"></i> Pelayanan cepat, tepat, dan ramah</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-success"></i> Program promotif & preventif</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-success"></i> Fasilitas modern & terstandar</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="card glow-card">
+            <img src="gambar/gambar 1.jpg" alt="Puskesmas" style="border-radius: var(--radius);" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="poli" class="reveal">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-3">
+        <h2 class="section-title mb-0">Poli & Layanan</h2>
+        <div class="d-flex align-items-center gap-2">
+          <input id="searchPoli" type="search" class="form-control search-input" placeholder="Cari poli..." /> 
+        </div>
+      </div>
+      <div id="poliGrid" class="row g-4">
+        </div>
+    </div>
+  </section>
+
+  <section id="jadwal" class="reveal">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <h2 class="section-title mb-0">Jadwal Dokter</h2>
+        <div class="day-pill btn-group" role="group" aria-label="Pilih Hari">
+          <button class="btn btn-outline-success active" data-day="Senin">Senin</button>
+          <button class="btn btn-outline-success" data-day="Selasa">Selasa</button>
+          <button class="btn btn-outline-success" data-day="Rabu">Rabu</button>
+          <button class="btn btn-outline-success" data-day="Kamis">Kamis</button>
+          <button class="btn btn-outline-success" data-day="Jumat">Jumat</button>
+          <button class="btn btn-outline-success" data-day="Sabtu">Sabtu</button>
+        </div>
+      </div>
+      <div class="table-responsive mt-3">
+        <table class="table table-hover align-middle schedule-table">
+          <thead>
+            <tr>
+              <th>Poli</th>
+              <th>Dokter</th>
+              <th>Jam</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="tenaga-section" class="reveal">
+    <div class="container">
+      <h2 class="section-title mb-3">Tenaga Kesehatan</h2>
+      <div class="table-responsive mt-3">
+        <table class="table table-hover align-middle schedule-table">
+          <thead>
+            <tr>
+              <th class="text-center" style="width: 50px;">No</th>
+              <th>Jenis Tenaga Medis</th>
+              <th class="text-center">Jumlah</th>
+            </tr> 
+          </thead>
+          <tbody id="tenagaBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="berita" class="reveal">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+        <h2 class="section-title mb-0">Berita & Pengumuman</h2>
+      </div>
+      <div id="newsList" class="row g-4"></div>
+    </div>
+  </section>
+
+  <section id="galeri" class="reveal">
+    <div class="container">
+      <h2 class="section-title mb-4">Galeri Kegiatan</h2>
+      <div class="row g-3 gallery" id="gallery-container"></div>
+    </div>
+  </section>
+
+  <section id="kontak" class="reveal">
+    <div class="container">
+      <h2 class="section-title mb-4">Kontak & Lokasi</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="map-card">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.3367493142136!2d97.0783766!3d5.2096673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304777c2460e216b%3A0x30fb57f2dccdc19c!2sPuskesmas%20%7C%20Muara%20Satu!5e0!3m2!1sid!2sid!4v1755835613651!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card glow-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Informasi Kontak</h5>
+              <p class="mb-1"><i class="bi bi-geo-alt"></i> Jl. Kesehatan No. 1, Muara Satu, Lhokseumawe</p>
+              <p class="mb-1"><i class="bi bi-telephone"></i> 0852-1315-3745</p>
+              <p class="mb-3"><i class="bi bi-envelope"></i> info@puskesmasmuarasatu.id</p>
+              <a class="btn btn-success" target="_blank" href="https://www.instagram.com/puskesmas_muarasatu/"><i class="bi bi-instagram"></i> Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h5 class="mb-3">Puskesmas Muara Satu</h5>
+          <p class="mb-2">Pelayanan kesehatan ramah, tepat, dan akurat untuk seluruh masyarakat.</p>
+          <small>© 2025 Puskesmas Muara Satu. All rights reserved.</small>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#profil" class="me-3">Profil</a>
+          <a href="#poli" class="me-3">Layanan</a>
+          <a href="#kontak">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <button id="btnTop" title="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
+
+  <div class="modal fade" id="modalFoto" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <img id="imgPreview" alt="Foto Galeri" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+
+  <template id="tmplPoli">
+    <div class="col-md-6 col-lg-4">
+      <div class="card glow-card h-100">
+        <img class="poli-img" alt="" />
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="poli-icon"></i>
+            <h5 class="card-title mb-0 poli-nama"></h5>
+          </div>
+          <p class="card-text poli-desk"></p>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="tmplNews">
+    <div class="col-md-6 col-lg-4">
+      <div class="card glow-card h-100 news-card">
+        <div class="card-body d-flex flex-column">
+          <span class="badge text-bg-success rounded-pill mb-2 news-tag align-self-start"></span>
+          <h6 class="mb-1 news-title"></h6>
+          <small class="text-muted d-block mb-2 news-date"></small>
+          <p class="mb-3 news-body flex-grow-1"></p>
+          <button class="btn btn-sm btn-ghost more-btn align-self-start">Baca selengkapnya</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- VARIABEL GLOBAL & STATE ---
+  let allPoliData = [];
+  let allJadwalData = {};
+  let serverTime = null;
+  const HARI = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+
+  // --- FUNGSI UTILITAS (PEMBANTU) ---
+  const fmtDate = (d) => new Date(d).toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' });
+
+  const animateCounter = (el, target, duration = 1500) => {
+    if (!el || isNaN(target)) return;
+    const start = 0;
+    const startTime = performance.now();
+    const update = (now) => {
+      const p = Math.min((now - startTime) / duration, 1);
+      el.textContent = Math.floor(start + (target - start) * p).toLocaleString('id-ID');
+      if (p < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  };
+
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    let greeting = "Selamat Malam 🌙";
+    if (hour >= 5 && hour < 11) greeting = "Selamat Pagi 🌅";
+    else if (hour >= 11 && hour < 15) greeting = "Selamat Siang ☀️";
+    else if (hour >= 15 && hour < 18) greeting = "Selamat Sore 🌇";
+    return `${greeting} | Selamat datang di Puskesmas Muara Satu — Pelayanan kesehatan terbaik untuk masyarakat!`;
+  };
+
+  const cekStatusJadwal = (jamString) => {
+    try {
+      const now = new Date();
+      const [start, end] = jamString.split(" - ");
+      const [sh, sm] = start.split(":").map(Number);
+      const [eh, em] = end.split(":").map(Number);
+      const nowMinutes = now.getHours() * 60 + now.getMinutes();
+      const startMinutes = sh * 60 + sm;
+      const endMinutes = eh * 60 + em;
+      return (nowMinutes >= startMinutes && nowMinutes < endMinutes) ? "Buka" : "Tutup";
+    } catch (e) {
+      return "Tutup";
+    }
+  };
+
+  // --- FUNGSI RENDER (MENAMPILKAN DATA KE HTML) ---
+  const renderPoli = (list) => {
+    const poliGrid = document.getElementById('poliGrid');
+    if (!poliGrid) return;
+    poliGrid.innerHTML = '';
+    const tpl = document.getElementById('tmplPoli').content;
+    if (!list.length) {
+      poliGrid.innerHTML = '<div class="col-12"><div class="alert alert-warning">Tidak ada layanan yang cocok dengan pencarian Anda.</div></div>';
+      return;
+    }
+    list.forEach(p => {
+      const node = tpl.cloneNode(true);
+      node.querySelector('.poli-img').src = 'admin/' + p.gambar_url;
+      node.querySelector('.poli-img').alt = p.nama;
+      node.querySelector('.poli-nama').textContent = p.nama;
+      node.querySelector('.poli-desk').textContent = p.deskripsi;
+      node.querySelector('.poli-icon').classList.add('bi', `bi-${p.icon}`);
+      poliGrid.appendChild(node);
+    });
+  };
+
+  const renderSchedule = (day) => {
+    const scheduleBody = document.getElementById('scheduleBody');
+    if (!scheduleBody) return;
+    scheduleBody.innerHTML = '';
+    const jadwalHariIni = allJadwalData[day] || [];
+    if (jadwalHariIni.length === 0) {
+      scheduleBody.innerHTML = '<tr><td colspan="4" class="text-center">Tidak ada jadwal praktik untuk hari ini.</td></tr>';
+      return;
+    }
+    jadwalHariIni.forEach(row => {
+      const status = cekStatusJadwal(row.jam);
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${row.poli}</td>
+        <td>${row.dokter}</td>
+        <td>${row.jam}</td>
+        <td><span class="badge ${status === 'Buka' ? 'text-bg-success' : 'text-bg-danger'}">${status}</span></td>`;
+      scheduleBody.appendChild(tr);
+    });
+  };
+
+  const renderTenaga = (data) => {
+    const tenagaBody = document.getElementById('tenagaBody');
+    if (!tenagaBody) return;
+    tenagaBody.innerHTML = '';
+    if (!data.length) {
+      tenagaBody.innerHTML = '<tr><td colspan="3" class="text-center">Belum ada data tenaga kesehatan.</td></tr>';
+      return;
+    }
+    data.forEach((row, i) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="text-center">${i + 1}</td>
+        <td>${row.jenis}</td>
+        <td class="text-center">${row.jumlah}</td>`;
+      tenagaBody.appendChild(tr);
+    });
+  };
+
+  const renderNews = (newsData) => {
+    const newsList = document.getElementById('newsList');
+    if (!newsList) return;
+    const tpl = document.getElementById('tmplNews').content;
+    newsList.innerHTML = '';
+    newsData.forEach(n => {
+      const node = tpl.cloneNode(true);
+      node.querySelector('.news-tag').textContent = n.tag;
+      node.querySelector('.news-title').textContent = n.judul;
+      node.querySelector('.news-date').textContent = fmtDate(n.tanggal);
+      const bodyEl = node.querySelector('.news-body');
+      const isLongText = n.isi.length > 120;
+      bodyEl.textContent = isLongText ? n.isi.slice(0, 120) + '…' : n.isi;
+      
+      const moreBtn = node.querySelector('.more-btn');
+      if (!isLongText) moreBtn.style.display = 'none';
+
+      moreBtn.addEventListener('click', () => {
+        const isShowingLess = bodyEl.textContent.endsWith('…');
+        bodyEl.textContent = isShowingLess ? n.isi : n.isi.slice(0, 120) + '…';
+        moreBtn.textContent = isShowingLess ? 'Baca lebih sedikit' : 'Baca selengkapnya';
+      });
+      newsList.appendChild(node);
+    });
+  };
+  
+  const renderGallery = (data) => {
+    const container = document.getElementById('gallery-container');
+    if (!container) return;
+    container.innerHTML = '';
+    data.forEach(item => {
+      const col = document.createElement('div');
+      col.className = 'col-6 col-md-4 col-lg-3';
+      col.innerHTML = `
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalFoto" data-src="admin/${item.gambar_path}">
+          <img src="admin/${item.gambar_path}" alt="${item.deskripsi || 'Foto Galeri'}" class="img-fluid gallery-img">
+        </a>`;
+      container.appendChild(col);
+    });
+  };
+
+  // --- FUNGSI SETUP & EVENT LISTENERS ---
+  const setupScrollListeners = () => {
+    const nav = document.querySelector('.navbar');
+    const btnTop = document.getElementById('btnTop');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+      if (btnTop) btnTop.style.display = window.scrollY > 200 ? 'grid' : 'none';
+    });
+    if (btnTop) btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  };
+  
+  const setupScrollReveal = () => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  };
+  
+  const setupPoliSearch = () => {
+    const searchPoli = document.getElementById('searchPoli');
+    if (searchPoli) {
+      searchPoli.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = allPoliData.filter(p => 
+          p.nama.toLowerCase().includes(query) || (p.deskripsi && p.deskripsi.toLowerCase().includes(query))
+        );
+        renderPoli(filtered);
+      });
+    }
+  };
+
+  const setupJadwalTabs = () => {
+    document.querySelectorAll('.day-pill button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.day-pill button.active').classList.remove('active');
+        btn.classList.add('active');
+        renderSchedule(btn.dataset.day);
+      });
+    });
+  };
+  
+  const setupGalleryModal = () => {
+    const modalFoto = document.getElementById('modalFoto');
+    const imgPrev = document.getElementById('imgPreview');
+    if (modalFoto && imgPrev) {
+      modalFoto.addEventListener('show.bs.modal', (ev) => {
+        const src = ev.relatedTarget.getAttribute('data-src');
+        imgPrev.src = src;
+      });
+    }
+  };
+  
+  const updateClock = () => {
+    if (serverTime === null) return;
+    const now = new Date(serverTime);
+    const clockEl = document.getElementById('clock');
+    const dateEl = document.getElementById('tanggal');
+    if(clockEl) {
+      clockEl.textContent = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+    }
+    if(dateEl) {
+      dateEl.textContent = `${HARI[now.getDay()]}, ${now.toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' })}`;
+    }
+    serverTime += 1000;
+  };
+  
+  // --- INISIALISASI & MEMUAT DATA AWAL ---
+  const main = async () => {
+    setupScrollListeners();
+    setupScrollReveal();
+    setupPoliSearch();
+    setupJadwalTabs();
+    setupGalleryModal();
+
+    document.getElementById("running-msg").innerText = getGreeting();
+    
+    // Fetch semua data dari server secara bersamaan
+    Promise.all([
+      fetch('api/get_poli.php').then(res => res.ok ? res.json() : []),
+      fetch('api/get_tenaga.php').then(res => res.ok ? res.json() : []),
+      fetch('api/get_jadwal.php').then(res => res.ok ? res.json() : {}),
+      fetch('api/get_berita.php').then(res => res.ok ? res.json() : []),
+      fetch('api/get_galeri.php').then(res => res.ok ? res.json() : []),
+      fetch('time.php').then(res => res.ok ? res.text() : Date.now())
+    ]).then(([poliData, tenagaData, jadwalData, beritaData, galeriData, timeData]) => {
+      // Poli & Layanan
+      allPoliData = poliData;
+      renderPoli(allPoliData);
+      animateCounter(document.getElementById('stat-layanan'), allPoliData.length);
+      
+      // Tenaga Medis
+      renderTenaga(tenagaData);
+      let totalTenaga = 0;
+      tenagaData.forEach(t => { totalTenaga += t.jumlah; });
+      animateCounter(document.getElementById('stat-dokter'), tenagaData.length);
+      
+      // Jadwal Dokter
+      allJadwalData = jadwalData;
+      const hariIni = HARI[new Date().getDay()];
+      const tombolHariIni = document.querySelector(`.day-pill button[data-day="${hariIni}"]`);
+      if (tombolHariIni) {
+          document.querySelector('.day-pill button.active').classList.remove('active');
+          tombolHariIni.classList.add('active');
+          renderSchedule(hariIni);
+      } else {
+          renderSchedule('Senin'); 
+      }
+      setInterval(() => renderSchedule(document.querySelector('.day-pill button.active').dataset.day), 60000);
+
+      // Berita dan Galeri
+      renderNews(beritaData);
+      renderGallery(galeriData);
+      
+      // Jam & Tanggal
+      serverTime = parseInt(timeData);
+      updateClock();
+      setInterval(updateClock, 1000);
+
+    }).catch(err => {
+      console.error("Gagal memuat satu atau lebih data penting:", err);
+      // Tampilkan pesan error ke pengguna jika diperlukan
+      document.getElementById('poliGrid').innerHTML = '<div class="col-12"><div class="alert alert-danger">Gagal memuat data dari server. Silakan coba lagi nanti.</div></div>';
+    });
+  };
+  
+  main();
+});
+</script>
+</body>
+</html>
